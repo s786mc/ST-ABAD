@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="سرور ماینکرفت اس‌تی آباد">
+    <meta property="og:description" content="رنک‌های ویژه سرور ماینکرفت اس‌تی آباد">
+    <meta property="og:url" content="https://s786mc.github.io">
+    <meta property="og:type" content="website">
+    <title>اس‌تی آباد - رنک‌های سرور</title>
+    <style>
+       
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0b1120 0%, #1a2639 100%);
+            color: #e2e8f0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+       
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #334155;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .time {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+
+        .login-btn {
+            background: #3b82f6;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .login-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+      }
+        .ranks-section {
+            padding: 60px 0;
+        }
+
+        .ranks-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .ranks-header h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(45deg, #60a5fa, #f472b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .ranks-header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .ranks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .rank-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(5px);
+            border: 1px solid #334155;
+            border-radius: 20px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .rank-card:hover {
+            transform: translateY(-8px);
+            border-color: #3b82f6;
+            box-shadow: 0 20px 40px -15px #3b82f680;
+            background: rgba(30, 41, 59, 0.9);
+        }
+
+        .rank-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #334155;
+            padding-bottom: 10px;
+        }
+
+        .rank-name span:first-child {
+            background: linear-gradient(45deg, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .price {
+            background: #3b82f6;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            -webkit-text-fill-color: white;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .features-list li {
+            margin-bottom: 12px;
+            padding-right: 25px;
+            position: relative;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        .features-list li::before {
+            content: "+";
+            position: absolute;
+            right: 0;
+            color: #4ade80;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .display-name {
+            display: inline-block;
+            background: #1e293b;
+            border: 1px dashed #3b82f6;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            margin-top: 10px;
+        }
+
+        
+        .rank-card.media {
+            border-color: #f43f5e;
+            background: rgba(244, 63, 94, 0.1);
+        }
+
+        .rank-card.media .rank-name span:first-child {
+            background: linear-gradient(45deg, #f43f5e, #fb7185);
+            -webkit-background-clip: text;
+        }
+
+        .rank-card.media .price {
+            background: #f43f5e;
+        }
+
+       
+        footer {
+            background: rgba(15, 23, 42, 0.8);
+            border-top: 1px solid #334155;
+            padding: 30px 0;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #60a5fa;
+        }
+
+        .copyright {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+       
+        .youtubers-slider {
+            position: relative;
+            height: 80px;
+            margin: 30px 0;
+        }
+
+        .youtuber {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s;
+            text-align: center;
+        }
+
+        .youtuber.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .youtuber img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        .youtuber span {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .ranks-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+  
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <div class="time"></div>
+                <div class="logo">ST ABAD</div>
+                <a href="https://t.me/StAbad" class="login-btn">ورود به چنل تلگرام</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">همین صفحه</a></li>
+                    <li><a href="./ghavanin.html">قوانین</a></li>
+                    <li><a href="https://t.me/StAbad">تلگرام</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="ranks-section">
+        <div class="container">
+            <div class="ranks-header">
+                <h1>رنک‌های سرور</h1>
+                <p>لیست رنک‌های ویژه سرور اس‌تی آباد</p>
+            </div>
+
+            <div class="ranks-grid">
+             
+                <div class="rank-card">
+                    <div class="rank-name">
+                        <span>رنک ممبر</span>
+                        <span class="price">50T</span>
+                    </div>
+                    <ul class="features-list">
+                        <li>این رنک صرفا به شما توانایی بازی در سرور و تعامل با بازیکنان بدون محدودیت را میدهد</li>
+                    </ul>
+                    <div class="display-name">نام نمایشی : [Member]</div>
+                </div>
+
+               
+                <div class="rank-card">
+                    <div class="rank-name">
+                        <span>رنک آیرون</span>
+                        <span class="price">95T</span>
+                    </div>
+                    <ul class="features-list">
+                        <li>فول آیرون فول اینچنت</li>
+                        <li>فول تولز آیرون فول اینچنت</li>
+                        <li>۳ استک گلدن کروت</li>
+                    </ul>
+                    <div class="display-name">نام نمایشی : [دلخواه]</div>
+                </div>
+
+               
+                <div class="rank-card">
+                    <div class="rank-name">
+                        <span>رنک اقتصادی</span>
+                        <span class="price">100T</span>
+                    </div>
+                    <ul class="features-list">
+                        <li>فول دایمند (با اینچنت مندینگ، آنبرکینگ ۳)</li>
+                        <li>فول تولز دایمند بدون اینچنت</li>
+                        <li>۱ استک گلدن کروت</li>
+                    </ul>
+                    <div class="display-name">نام نمایشی : [دلخواه]</div>
+                </div>
+
+               
+                <div class="rank-card">
+                    <div class="rank-name">
+                        <span>رنک دایمند</span>
+                        <span class="price">150T</span>
+                    </div>
+                    <ul class="features-list">
+                        <li>فول دایمند فول اینچنت</li>
+                        <li>فول تولز فول دایمند فول اینچنت</li>
+                        <li>۴ استک گلدن کروت</li>
+                    </ul>
+                    <div class="display-name">نام نمایشی : [دلخواه]</div>
+                </div>
+
+                <!-- رنک اس تی فن -->
+                <div class="rank-card">
+                    <div class="rank-name">
+                        <span>رنک اس تی فن</span>
+                        <span class="price">300T</span>
+                    </div>
+                    <ul class="features-list">
+                        <li>فول ندرایت فول اینچنت</li>
+                        <li>فول تولز ندرایت فول اینچنت</li>
+                        <li>۵۵۰ کلایم بلاک</li>
+                        <li>پارتیکل : [دلخواه]</li>
+                        <li>درصورت وجود مشکل ارتباط مستقیم با تیم</li>
+                    </ul>
+                    <div class="display-name">نام نمایشی : [دلخواه]</div>
+                </div>
+
+                <!-- رنک مدیا (ویژه) -->
+                <div class="rank-card media">
+                    <div class="rank-name">
+                        <span>رنک مدیا</span>
+                        <span class="price">رایگان</span>
+                    </div>
+                    <ul class="features-list">
+                        <li>نام نمایشی : [media]</li>
+                        <li>پارتیکل : [مخصوص رنک مدیا]</li>
+                        <li>اکثر ویدئو های چنل شما در چنل گزاشته می‌شود</li>
+                        <li>باز شدن پیام مستقیم شما به اونر سرور</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section-header>
+
+  
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <h3>ویژگی های سرور:</h3>
+                <div class="feature-card" style="background: rgba(30, 41, 59, 0.5); padding: 20px; border-radius: 15px; margin: 15px 0;">
+                    <h3>-سروری با پینگ بهتر.</h3>
+                    <p>داخل این سرور با پینگ پایین و مناسب برای بازی ماینکرفت ،بازی کن!</p>
+                </div>
+                <div class="feature-card" style="background: rgba(30, 41, 59, 0.5); padding: 20px; border-radius: 15px; margin: 15px 0;">
+                    <h3>-پلاگین‌های کاربردی برای راحتی بیشتر پلیرها.</h3>
+                    <p>پلاگین هایی مثل ترید و کلیم هستن که کمکت میکنن راحت تر به بازی ادامه بدی.</p>
+                </div>
+                <div class="feature-card" style="background: rgba(30, 41, 59, 0.5); padding: 20px; border-radius: 15px; margin: 15px 0;">
+                    <h3>-جامعه‌ای از پلیرهای خوب و پایه.</h3>
+                    <p>این سرور کلی پلیر پایه و خوب داره که میتونی باهاشون دوست بشی و تیمتونو قوی‌تر کنید!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="faq">
+        <div class="container">
+            <h2 style="text-align: center; margin: 40px 0 30px;">سوالات متداول ❓️</h2>
+            <div class="faq-grid" style="display: grid; gap: 20px;">
+                <div class="faq-item" style="background: rgba(30, 41, 59, 0.5); padding: 25px; border-radius: 15px;">
+                    <h3>وقتی وارد سرور میشم نمیتونم حرکت کنم دلیلش چیه؟</h3>
+                    <p>سرور ما برای امنیت اکانت بازیکنان کرک ، پلاگین لاگین دارد . <br> طریقه استفاده: <br> اولین بار که وارد سرور شدید در چت بنویسید: <br> /register رمزانتخابی تکرار <br> و از آن به بعد ، در چت بنویسید:<br> /login رمز <br> الان دیگه درست شد!</p>
+                </div>
+                <div class="faq-item" style="background: rgba(30, 41, 59, 0.5); padding: 25px; border-radius: 15px;">
+                    <h3>آیا سرور قوانين ندارد؟</h3>
+                    <p>خیر، لطفا هرچه زودتر قوانین را در بخش قوانین سرور که بالا ذکر شد را مطالعه کنید ، در غیر این صورت کارکنان ما به زودی شمارا بن خواهند کرد.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="./ghavanin.html">قوانین</a>
+                <a href="https://T.me/STabadServer_bot">خرید ورودی</a>
+            </div>
+            <div class="copyright">
+                حق‌نشر ۱۴۰۴ || تمامی حقوق محفوظ است!
+            </div>
+        </div>
+    </footer>
+
+    <script>
+       
+        document.addEventListener('DOMContentLoaded', function() {
+           
+            const youtubers = document.querySelectorAll('.youtuber');
+            let currentYoutuber = 0;
+            
+            function showNextYoutuber() {
+                youtubers[currentYoutuber].classList.remove('active');
+                currentYoutuber = (currentYoutuber + 1) % youtubers.length;
+                youtubers[currentYoutuber].classList.add('active');
+            }
+            setInterval(showNextYoutuber, 4000);
+
+           
+            const button : document.querySelector('.btn.btn-secondary');
+            if (button) {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const notification = document.createElement('div');
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background: #1e293b;
+                        color: #60a5fa;
+                        padding: 15px 25px;
+                        border-radius: 8px;
+                        border: 2px solid #3b82f6;
+                        font-weight: bold;
+                        z-index: 1000;
+                        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                    `;
+                    notification.textContent = 'ایپی سرور: alex.9craft.ir:19609';
+                    document.body.appendChild(notification);
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 3000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
