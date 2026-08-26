@@ -6,11 +6,6 @@
     font-display: swap;
 }
 
-html,
-body,
-button,
-input,
-textarea,
-select {
+* {
     font-family: "Pelak", Tahoma, Arial, sans-serif;
 }
