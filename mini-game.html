@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مینی گیم | AMIR NEX</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            background: #ffd900;
+            color: #111;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .game {
+            width: min(100%, 500px);
+            background: #fff;
+            border: 5px solid #111;
+            border-radius: 28px;
+            padding: 30px 22px;
+            text-align: center;
+            box-shadow: 0 12px 0 #111;
+        }
+
+        .back {
+            display: inline-block;
+            color: #111;
+            text-decoration: none;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #111;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-weight: 600;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .number {
+            width: 100%;
+            padding: 16px;
+            border: 3px solid #111;
+            border-radius: 14px;
+            font-size: 20px;
+            text-align: center;
+            outline: none;
+            margin-bottom: 12px;
+        }
+
+        .number:focus {
+            box-shadow: 0 0 0 4px #ffd900;
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            border: 3px solid #111;
+            border-radius: 14px;
+            background: #111;
+            color: #ffd900;
+            font-size: 18px;
+            font-weight: 900;
+            cursor: pointer;
+            transition: 0.15s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        .message {
+            min-height: 30px;
+            margin-top: 20px;
+            font-size: 17px;
+            font-weight: 800;
+        }
+
+        .score {
+            margin-top: 15px;
+            font-weight: 800;
+        }
+
+        .restart {
+            display: none;
+            margin-top: 12px;
+            background: #ffd900;
+            color: #111;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="game">
+
+        <a href="index.html" class="back">← برگشت به صفحه اصلی</a>
+
+        <img src="logo.png" alt="AMIR NEX" class="logo">
+
+        <h1>🎮 حدس عدد</h1>
+
+        <p class="description">
+            من یک عدد بین ۱ تا ۱۰۰ انتخاب کردم!
+            ببین می‌تونی پیداش کنی؟
+        </p>
+
+        <input
+            type="number"
+            id="guess"
+            class="number"
+            min="1"
+            max="100"
+            placeholder="عددت رو وارد کن"
+        >
+
+        <button onclick="checkGuess()">
+            حدس بزن!
+        </button>
+
+        <div class="message" id="message"></div>
+
+        <div class="score" id="score">
+            تلاش‌ها: 0
+        </div>
+
+        <button class="restart" id="restart" onclick="restartGame()">
+            🔄 بازی دوباره
+        </button>
+
+    </div>
+
+    <script>
+        let number = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+        let finished = false;
+
+        const guessInput = document.getElementById("guess");
+        const message = document.getElementById("message");
+        const score = document.getElementById("score");
+        const restart = document.getElementById("restart");
+
+        function checkGuess() {
+            if (finished) return;
+
+            const guess = Number(guessInput.value);
+
+            if (!guess || guess < 1 || guess > 100) {
+                message.textContent = "⚠️ یک عدد بین ۱ تا ۱۰۰ وارد کن!";
+                return;
+            }
+
+            attempts++;
+
+            score.textContent = "تلاش‌ها: " + attempts;
+
+            if (guess === number) {
+                message.textContent = "🎉 آفرین! عدد درست رو پیدا کردی!";
+                finished = true;
+                restart.style.display = "block";
+                guessInput.disabled = true;
+            } else if (guess < number) {
+                message.textContent = "📈 عدد بزرگ‌تره!";
+            } else {
+                message.textContent = "📉 عدد کوچک‌تره!";
+            }
+
+            guessInput.value = "";
+            guessInput.focus();
+        }
+
+        function restartGame() {
+            number = Math.floor(Math.random() * 100) + 1;
+            attempts = 0;
+            finished = false;
+
+            score.textContent = "تلاش‌ها: 0";
+            message.textContent = "";
+
+            guessInput.disabled = false;
+            restart.style.display = "none";
+
+            guessInput.focus();
+        }
+
+        guessInput.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                checkGuess();
+            }
+        });
+    </script>
+
+</body>
+</html>
