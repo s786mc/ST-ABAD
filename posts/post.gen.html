@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کنترل پنل | AMIR NEX</title>
+    <link rel="stylesheet" href="./FontStyle.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #ffd900;
+            color: #111;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: min(100%, 850px);
+            margin: auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px 0 30px;
+        }
+
+        header h1 {
+            font-size: clamp(32px, 8vw, 52px);
+            font-weight: 900;
+        }
+
+        header p {
+            margin-top: 8px;
+            font-weight: 700;
+        }
+
+        .panel {
+            background: #fff;
+            border: 4px solid #111;
+            border-radius: 22px;
+            padding: 25px;
+            box-shadow: 0 8px 0 #111;
+        }
+
+        .field {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            border: 3px solid #111;
+            border-radius: 12px;
+            padding: 14px;
+            font: inherit;
+            outline: none;
+            background: #fff;
+            color: #111;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            box-shadow: 0 0 0 4px #ffd900;
+        }
+
+        .button {
+            width: 100%;
+            padding: 15px;
+            border: 3px solid #111;
+            border-radius: 12px;
+            background: #111;
+            color: #ffd900;
+            font: inherit;
+            font-weight: 900;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        .result {
+            display: none;
+            margin-top: 25px;
+        }
+
+        .result h2 {
+            margin-bottom: 12px;
+        }
+
+        .code {
+            width: 100%;
+            min-height: 180px;
+            direction: ltr;
+            text-align: left;
+            font-family: monospace;
+            font-size: 13px;
+            background: #f2f2f2;
+        }
+
+        .copy {
+            background: #ffd900;
+            color: #111;
+        }
+
+        .instructions {
+            margin-top: 25px;
+            padding: 20px;
+            background: #fff8bd;
+            border: 3px solid #111;
+            border-radius: 15px;
+            line-height: 2;
+            font-weight: 700;
+        }
+
+        .instructions code {
+            background: #111;
+            color: #ffd900;
+            padding: 3px 7px;
+            border-radius: 5px;
+            direction: ltr;
+            display: inline-block;
+        }
+
+        a {
+            color: #111;
+            font-weight: 900;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>AMIR NEX</h1>
+        <p>کنترل پنل ساخت پست</p>
+    </header>
+
+    <div class="panel">
+
+        <div class="field">
+            <label for="postName">نام پست</label>
+            <input id="postName" type="text" placeholder="مثلاً post1">
+        </div>
+
+        <div class="field">
+            <label for="title">تایتل</label>
+            <input id="title" type="text" placeholder="عنوان پست">
+        </div>
+
+        <div class="field">
+            <label for="subtitle">ساب‌تایتل</label>
+            <input id="subtitle" type="text" placeholder="زیرعنوان پست">
+        </div>
+
+        <div class="field">
+            <label for="description">توضیحات</label>
+            <textarea id="description" placeholder="متن توضیحات پست"></textarea>
+        </div>
+
+        <div class="field">
+            <label for="buttonText">متن دکمه</label>
+            <input id="buttonText" type="text" placeholder="مثلاً مشاهده ویدئو">
+        </div>
+
+        <div class="field">
+            <label for="buttonLink">لینک دکمه</label>
+            <input id="buttonLink" type="url" placeholder="https://example.com">
+        </div>
+
+        <button class="button" onclick="generatePost()">
+            ساخت کد پست
+        </button>
+
+        <div class="result" id="result">
+
+            <h2>✅ کد آماده شد</h2>
+
+            <textarea class="code" id="output" readonly></textarea>
+
+            <button class="button copy" onclick="copyCode()">
+                📋 کپی کد
+            </button>
+
+            <div class="instructions">
+                <strong>دقیقاً این کارها را انجام بده:</strong>
+                <br><br>
+
+                1. روی «کپی کد» بزن.
+                <br>
+
+                2. برو به:
+                <code>posts/index.html</code>
+                <br>
+
+                3. کد را داخل قسمت
+                <code>&lt;main&gt;</code>
+                قرار بده.
+                <br><br>
+
+                4. اگر چند پست داری، کد جدید را زیر پست قبلی قرار بده.
+                <br><br>
+
+                5. فایل را ذخیره کن و روی هاست آپلود کن.
+                <br><br>
+
+                <strong>نکته:</strong>
+                اسم پست مثل <code>post1</code> فقط برای شناسایی خودت است و داخل سایت نمایش داده نمی‌شود.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function escapeHTML(text) {
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function generatePost() {
+    const name = document.getElementById("postName").value.trim();
+    const title = document.getElementById("title").value.trim();
+    const subtitle = document.getElementById("subtitle").value.trim();
+    const description = document.getElementById("description").value.trim();
+    const buttonText = document.getElementById("buttonText").value.trim();
+    const buttonLink = document.getElementById("buttonLink").value.trim();
+
+    if (!name) {
+        alert("نام پست را وارد کنید.");
+        return;
+    }
+
+    if (!title) {
+        alert("تایتل را وارد کنید.");
+        return;
+    }
+
+    if (!description) {
+        alert("توضیحات را وارد کنید.");
+        return;
+    }
+
+    let button = "";
+
+    if (buttonText && buttonLink) {
+        button = `<a href="${escapeHTML(buttonLink)}" class="post-button" target="_blank" rel="noopener">${escapeHTML(buttonText)}</a>`;
+    }
+
+    const post = `<article class="post" id="${escapeHTML(name)}"><h2>${escapeHTML(title)}</h2>${subtitle ? `<h3>${escapeHTML(subtitle)}</h3>` : ""}<p>${escapeHTML(description)}</p>${button}</article>`;
+
+    document.getElementById("output").value = post;
+    document.getElementById("result").style.display = "block";
+}
+
+function copyCode() {
+    const output = document.getElementById("output");
+
+    navigator.clipboard.writeText(output.value).then(() => {
+        alert("کد پست کپی شد!");
+    }).catch(() => {
+        output.select();
+        document.execCommand("copy");
+        alert("کد پست کپی شد!");
+    });
+}
+</script>
+
+</body>
+</html>
