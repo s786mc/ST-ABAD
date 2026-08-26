@@ -3,188 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:title" content="سرور ماینکرفت اس‌تی آباد ">
-  <meta property="og:description" content="همین الان با پینگ پایین در سرور اس‌تی آباد بازی کن - سرور ماینکرفت">
-<meta property="og:url" content="https://s786mc.github.io">
-  <meta property="og:type" content="website">
-    <title>اس‌تی آباد - سرور ماینکرفت</title>
-    <link rel="stylesheet" href="./styles.css">
+    <title>AMIR NEX | سایت رسمی</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Tahoma, sans-serif;
+            background: #ffd900;
+            color: #111;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: min(100% - 32px, 900px);
+            margin: auto;
+        }
+
+        header {
+            padding: 24px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .profile {
+            text-align: center;
+            padding: 55px 20px 35px;
+        }
+
+        .profile-image {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #111;
+            background: #fff;
+            margin-bottom: 20px;
+        }
+
+        .profile h1 {
+            font-size: clamp(38px, 9vw, 72px);
+            font-weight: 900;
+            direction: ltr;
+            letter-spacing: 2px;
+        }
+
+        .profile p {
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 12px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 650px;
+            margin: 35px auto 0;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 65px;
+            padding: 15px;
+            background: #111;
+            color: #ffd900;
+            text-decoration: none;
+            border-radius: 16px;
+            font-size: 17px;
+            font-weight: 800;
+            transition: 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 0 #fff;
+        }
+
+        .about {
+            margin: 30px auto;
+            padding: 25px;
+            max-width: 650px;
+            background: #fff;
+            border: 4px solid #111;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .about p {
+            line-height: 2;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0 20px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        @media (max-width: 600px) {
+            .buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .profile {
+                padding-top: 35px;
+            }
+
+            .profile-image {
+                width: 110px;
+                height: 110px;
+            }
+
+            .button {
+                min-height: 60px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-top">
-                <div class="time"></div>
-                <div class="logo"> ST ABAD</div>
-                <a href="https://t.me/StAbad" class="login-btn">ورود به چنل تلگرام</a>
-            </div>
+
+    <div class="container">
+
+        <header>
             <nav>
-                <ul>
-                    <li><a href="./index.html">همین صفحه</a></li> <p>   </p>
-                    <li><a href="./ghavanin.html">قوانین</a></li>
-                    <li><a href="https://t.me/StAbad">تلگرام</a></li>
-                    <li><a href="./ranks">رنک‌ها</a></li>
-                </ul>
+                <div class="brand">AMIR NEX</div>
             </nav>
-        </div>
-    </header>
-    <section class="hero">
-        <div class="container">
-            <h1>
-              سرور ماینکرفت  ST ABAD
-            </h1>
-            <p>-ما با ارائه‌ی یک سرور ماینکرافت SMP اینجاییم تا تجربه‌ای بهتر و متفاوت از سرورهای ایرانی داشته باشید.</p>
-            <div class="hero-buttons">
-                <a href="./ghavanin.html" class="btn btn-primary">مشاهده قوانين سرور</a>
-<a href="https://T.me/STAbad_supp" class="btn btn-primary">پشتیبانی سرور</a>
-                <a href="#" class="btn btn-secondary">دیدن آیپی سرور</a> <a href="https://T.me/STabadServer_bot" class="btn btn-secondary">خرید ورودی سرور</a>
-<a href="./ranks" class="btn btn-secondary">خرید رنک سرور</a>
-            </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- Trusted Section -->
-    <section class="trusted">
-        <div class="container">
-            <h2>ما و شما</h2>
-            <div class="youtubers-slider">
-                <div class="youtuber active">
-                    <img src="./images/start.png" alt="عکس">
-                    <span>
-                      شروع سرور با شما
-                    </span>
-                </div>
-                
-                
-            </div>
-        </div>
-    </section>
+        <main>
 
-    <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <div class="features-grid"> <h3> ویژگی های سرور:</h3>
-                <div class="feature-card">
-                    <h3>-سروری با پینگ بهتر.</h3>
-                    <p>
-                      داخل این سرور با پینگ پایین و مناسب برای بازی ماینکرفت  ،بازی کن!
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <h3>-پلاگین‌های کاربردی برای راحتی بیشتر پلیرها.</h3>
-                    <p>پلاگین هایی مثل ترید و کلیم هستن که کمکت میکنن راحت تر به بازی ادامه بدی.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>-جامعه‌ای از پلیرهای خوب و پایه.</h3>
-                    <p>این سرور کلی پلیر پایه و خوب داره که میتونی باهاشون  دوست بشی و تیمتونو قوی‌تر کنید!</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <section class="profile">
+                <img src="logo.png" alt="AMIR NEX" class="profile-image">
 
-    <!-- Pricing Section -->
-    <section class="pricing">
-        <div class="container">
-            
-        </div>
-    </section>
+                <h1>AMIR NEX</h1>
 
-    <!-- FAQ Section -->
-    <section class="faq">
-        <div class="container">
-            <h2>سوالات متداول❓️</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>وقتی وارد سرور میشم نمیتونم حرکت کنم دلیلش چیه؟</h3>
-                    <p>
-                      سرور ما برای امنیت اکانت بازیکنان کرک ، پلاگین لاگین دارد . <br>
-                      طریقه استفاده: <br>
-                      اولین بار که وارد سرور شدید در چت بنویسید: <br> /register رمزانتخابی تکرار <br> و از آن به بعد ، در چت بنویسید:<br> /login رمز <br> الان دیگه درست شد!
-                    </p>
+                <p>سایت رسمی امیر نکس</p>
+
+                <div class="buttons">
+
+                    <a href="#" class="button">
+                        ▶️ کانال یوتیوب
+                    </a>
+
+                    <a href="mini-game.html" class="button">
+                        🎮 مینی گیم
+                    </a>
+
+                    <a href="posts/" class="button">
+                        📝 پست‌ها
+                    </a>
+
+                    <a href="files/" class="button">
+                        📁 فایل‌ها
+                    </a>
+
                 </div>
-                <div class="faq-item">
-                    <h3>
-                      آیا سرور قوانين ندارد؟
-                    </h3>
-                    <p>
-                      خیر، لطفا هرچه زودتر قوانین را در بخش قوانین سرور که بالا ذکر شد را مطالعه کنید ، در غیر این صورت کارکنان ما به زودی شمارا بن خواهند کرد.
-                    </p>
-                </div>
-                
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="./ghavanin.html">قوانین</a>
-                <a href="https://T.me/STabadServer_bot">خرید ورودی</a>
-            </div>
-            <div class="copyright">
-              حق‌نشر ۱۴۰۴ || تمامی حقوق محفوظ است!
-            </div>
-        </div>
-    </footer>
+            <section class="about">
+                <h2>درباره من</h2>
 
-    <script>
-        // اسلایدر یوتیوبرها
-        document.addEventListener('DOMContentLoaded', function() {
-            const youtubers = document.querySelectorAll('.youtuber');
-            let currentYoutuber = 0;
-            
-            function showNextYoutuber() {
-                // مخفی کردن یوتیوبر فعلی
-                youtubers[currentYoutuber].classList.remove('active');
-                
-                // محاسبه یوتیوبر بعدی
-                currentYoutuber = (currentYoutuber + 1) % youtubers.length;
-                
-          
-                youtubers[currentYoutuber].classList.add('active');
-            }
-            
-      
-            setInterval(showNextYoutuber, 4000);
-        });
-      
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            const button = document.querySelector('.btn.btn-secondary');
-            
-            if (button) {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    
-                    const notification = document.createElement('div');
-                    notification.style.cssText = `
-                        position: fixed;
-                        top: 20px;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        background: #1e293b;
-                        color: #60a5fa;
-                        padding: 15px 25px;
-                        border-radius: 8px;
-                        border: 2px solid #3b82f6;
-                        font-weight: bold;
-                        z-index: 1000;
-                        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-                    `;
-                    notification.textContent = 'ایپی سرور: alex.9craft.ir:19609';
-                    
-                    document.body.appendChild(notification);
-                    
-                    // حذف خودکار بعد از 3 ثانیه
-                    setTimeout(() => {
-                        notification.remove();
-                    }, 3000);
-                });
-            }
-        });
-    </script>
+                <p>
+                    به سایت رسمی AMIR NEX خوش آمدید!
+                    اینجا می‌توانید ویدئوها، پست‌ها، فایل‌ها
+                    و مینی‌گیم‌های من را دنبال کنید.
+                </p>
+            </section>
+
+        </main>
+
+        <footer>
+            © 2026 AMIR NEX
+        </footer>
+
+    </div>
+
 </body>
-</html> 
+</html>
