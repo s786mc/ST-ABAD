@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "Pelak";
+    src: url("https://rskyer.github.io/AI_everywhere/o/pelak.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+html,
+body,
+button,
+input,
+textarea,
+select {
+    font-family: "Pelak", Tahoma, Arial, sans-serif;
+}
